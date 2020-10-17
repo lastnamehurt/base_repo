@@ -1,7 +1,7 @@
 import logging
 
 
-class SoleHuntBaseService(object):
+class BaseService(object):
 
     repo = None
 

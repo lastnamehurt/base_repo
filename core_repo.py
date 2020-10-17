@@ -39,6 +39,8 @@ class BaseRepo(object):
 
     @classmethod
     def prepareModel(cls, filters):
+        if cls.model.objects.filter(**filters).exists():
+            return cls.model.objects.filter(**filters).last()
         return cls.model(**filters)
 
     @classmethod
